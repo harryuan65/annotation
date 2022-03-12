@@ -8,11 +8,12 @@
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
+    "postcss": "^8.4.8",
     "rollup": "^2.70.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-import-css": "^3.0.2",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "main": "dist/ruby-annotation.cjs.js",
   "module": "dist/ruby-annotation.esm.js",

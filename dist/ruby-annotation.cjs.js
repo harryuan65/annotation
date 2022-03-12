@@ -25,6 +25,36 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = ".cdx-ruby {\n  padding-left: 3px;\n}\n.cdx-ruby__button{\n  font-weight: bold;\n}\n.cdx-hint {\n  font-size: 12px;\n  margin: 0 7px;\n}\n.cdx-wrap-input{\n  font-size: 12px;\n  margin-bottom: 5px;\n}\ninput.cdx-rt__text{\n  border: 1px solid #e7e7e7;\n  outline: none;\n  position: relative;\n  width: 70%;\n}\n";
+styleInject(css_248z);
+
 var Ruby = /*#__PURE__*/function () {
   function Ruby(_ref) {
     var api = _ref.api;
