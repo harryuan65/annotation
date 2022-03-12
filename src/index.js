@@ -11,7 +11,10 @@ class Ruby {
 
   static set state(newState) {
     this._state = newState;
-    this.button.classList.toggle(this.api.styles.inlineToolButtonActive, state);
+    this.button.classList.toggle(
+      this.api.styles.inlineToolButtonActive,
+      this._state
+    );
   }
 
   constructor({ api }) {
@@ -33,7 +36,6 @@ class Ruby {
     // this.button.innerHTML = '<svg width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.2762 0L17 5.58621L8.54696 15L0 5.58621L3.00552 0H5.8232H8.64088H11.4586H14.2762Z" fill="#D3493F"/><path d="M14.2762 0L17 5.58621H11.4116H5.8232H0L3.00552 0L5.8232 5.58621L8.64088 0L11.4116 5.58621L14.2762 0Z" fill="#EC5F59"/><path d="M17 5.58618L8.54696 15L0 5.58618H5.8232L8.54696 15L11.4116 5.58618H17Z" fill="#B63831"/></svg>';
     this.button.classList.add(this.api.styles.inlineToolButton);
     this.button.classList.add('cdx-ruby__button');
-
     return this.button;
   }
 
@@ -94,7 +96,6 @@ class Ruby {
     this.subTextInput.type = 'text';
     this.subTextInput.placeholder = 'なになに';
     this.subTextInput.classList.add('cdx-rt__text');
-    // this.subTextInput.hidden = true;
     this.wrapper.append(this.subTextInput);
     this.wrapper.hidden = true;
     return this.wrapper;
@@ -112,9 +113,8 @@ class Ruby {
         foundTag.textContent = this.subTextInput.value;
       };
     }
-
-    // this.subTextInput.hidden = false;
     this.wrapper.hidden = false;
+    this.subTextInput.focus();
   }
 
   hideActions() {
@@ -128,11 +128,8 @@ class Ruby {
       this.api.selection.findParentTag(this.baseTag) ||
       this.api.selection.findParentTag(this.subTag);
     this.state = !!foundTag;
-
     if (this.state) {
       this.showActions(foundTag);
-    } else {
-      this.hideActions();
     }
   }
 
