@@ -1,0 +1,9 @@
+{
+  "name": "annotation",
+  "version": "1.0.0",
+  "description": "provide ruby annotation for editorjs",
+  "main": "index.js",
+  "repository": "https://github.com/harryuan65/annotation.git",
+  "author": "harryuan65",
+  "license": "MIT"
+}
