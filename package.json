@@ -1,6 +1,6 @@
 {
   "name": "ruby-annotation",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "provide ruby annotation for editorjs",
   "repository": "https://github.com/harryuan65/ruby-annotation.git",
   "author": "harryuan65",
